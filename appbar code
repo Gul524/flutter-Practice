@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyAppBar());
+
+class MyAppBar extends StatelessWidget {
+  const MyAppBar({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          title: Text('AppBar'),
+          actions: [
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: const Icon(Icons.notifications),
+            ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: const Icon(Icons.info_outline_rounded),
+            ),
+          ],
+        ),
+        body: Center(
+          child: Text(
+            'Home Page',
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+    );
+  }
+}
